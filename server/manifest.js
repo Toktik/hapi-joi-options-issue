@@ -30,6 +30,15 @@ module.exports = new Confidence.Store({
             production: {
                 request: ['implementation']
             }
+        },
+        routes: { // gets injected to every route
+            compression: {},
+            validate: {
+                options: {
+                    debug: process.env.DEBUG_MODE === 'True',
+                    stripUnknown: true
+                }
+            }
         }
     },
     register: {
